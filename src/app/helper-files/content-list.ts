@@ -31,19 +31,16 @@ export class ContentList {
 
         }
 
-        let item = this._items[index];
 
         return `
         <div class="card">
-        <h4>${item.title}</h4>
-        <img src="${item.imgURL}" alt="cake" style="width:200px ; heigth: 150px">
-        <p>${item.description}</p>
-        <h5>${item.creator}</h5>
-        <p>${item.type}</p>
+        <h4>${this._items[index].title}</h4>
+        <img src="${this._items[index].imgURL}" alt="cake" style="width:200px ; heigth: 150px">
+        <p>${this._items[index].description}</p>
+        <h5>${this._items[index].creator}</h5>
+        <p>${this._items[index].type}</p>
         <hr>
         </div>
-
-
 
         `;
 

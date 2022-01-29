@@ -45,10 +45,11 @@ item3:Content = {
 };
 
  contentList = new ContentList();
+
   constructor() {
 
-    console.log('hello');
-   this.contentList.addContent(this.item1);
+    //console.log('hello');
+    this.contentList.addContent(this.item1);
     this.contentList.addContent(this.item2);
     this.contentList.addContent(this.item3);
     console.log(this.contentList.getContectCard(1));
