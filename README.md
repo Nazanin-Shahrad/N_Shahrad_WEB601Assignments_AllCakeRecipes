@@ -1,3 +1,11 @@
+Nazanin Shahrad 
+27 , 28 Jan 2022
+
+I have chosen Cake theme for this content app to store cakes recipes and ingrediants in one place , so I can add more recipes gadually and update and edit the previous one.
+
+
+
+
 # NShahradAllCakeRecipes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
