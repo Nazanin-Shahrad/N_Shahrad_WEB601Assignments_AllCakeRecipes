@@ -1,7 +1,7 @@
 import { leadingComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { ContentList } from '../helper-files/content-list';
+
 
 @Component({
   selector: 'app-content-card',
@@ -44,15 +44,11 @@ item3:Content = {
 
 };
 
- contentList = new ContentList();
+
 
   constructor() {
 
-    //console.log('hello');
-    this.contentList.addContent(this.item1);
-    this.contentList.addContent(this.item2);
-    this.contentList.addContent(this.item3);
-    console.log(this.contentList.getContectCard(1));
+
   }
 
   ngOnInit(): void {
