@@ -1,4 +1,28 @@
+.card {
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
+.header {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
 img {
-  width: 200px;
-  height: 150px;
+  width: 100%;
+}
+
+.tags span {
+  padding: 0.5rem;
+  background-color: rgba(255, 166, 0, 0.685);
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+:host.is-first {
+  border: 10px solid black;
 }
