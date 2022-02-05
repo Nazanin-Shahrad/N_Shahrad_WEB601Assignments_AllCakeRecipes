@@ -7,7 +7,8 @@
 <app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
 
 <app-content-card
-  *ngFor="let item of getList()"
+  *ngFor="let item of getList(); index as i; first as isFirst"
+  [class.is-first]="isFirst"
   [item]="item"
 ></app-content-card>
 
