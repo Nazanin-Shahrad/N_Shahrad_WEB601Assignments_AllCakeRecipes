@@ -44,7 +44,7 @@ export class ContentListComponent implements OnInit {
       description: 'How to make Carrot Cake',
       creator: 'nazanin',
       imgURL:
-        'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
+        'https://www.cookingclassy.com/wp-content/uploads/2020/04/carrot-cake-20-1.jpg',
       type: 'cake',
       tags: ['cake'],
     },
@@ -54,7 +54,7 @@ export class ContentListComponent implements OnInit {
       description: 'How to make Black forest Cake',
       creator: 'nazanin',
       imgURL:
-        'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
+        'https://www.sainsburysmagazine.co.uk/uploads/media/1800x1800/07/4577-black-forest-gateau-560.jpg?v=1-0',
       type: 'cake',
       tags: ['cake'],
     },
@@ -64,7 +64,7 @@ export class ContentListComponent implements OnInit {
       description: 'How to make German Cake',
       creator: 'nazanin',
       imgURL:
-        'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
+        'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18130334/051114082-01-classic-german-chocolate-cake-recipe-main.jpg',
       type: 'cake',
       tags: ['cake', 'classic cake'],
     },
@@ -74,7 +74,7 @@ export class ContentListComponent implements OnInit {
       description: 'How to make Fruit Cake',
       creator: 'nazanin',
       imgURL:
-        'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
+        'https://bakewithshivesh.com/wp-content/uploads/2021/06/IMG_9642-scaled.jpg',
       type: 'cake',
       tags: ['cake', 'fruit cake', 'homemade'],
     },

@@ -5,14 +5,8 @@
   margin: 10px;
 }
 
-.card.is-first {
-  border: 4px solid black;
-}
-
 .header {
   border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
 }
 
 img {
@@ -29,4 +23,16 @@ img {
 
 :host.is-first {
   border: 10px solid black;
+}
+
+.box {
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+header h3 {
+  justify-content: center;
+  padding: 10px;
 }
