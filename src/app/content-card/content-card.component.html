@@ -6,9 +6,9 @@
     <!-- <img src="{{item.imgURL}}" /> -->
     <img (click)="onImageClick()" [src]="item.imgURL" />
     <p *ngIf="item.description">{{ item.description }}</p>
-    <p>{{ item.type }}</p>
+    <p *ngIf="item.type">{{ item.type }}</p>
     <p>{{ item.creator }}</p>
-    <div class="tags">
+    <div class="tags" *ngIf="item.tags">
       <span *ngFor="let tag of item.tags">{{ tag }}</span>
     </div>
   </div>
