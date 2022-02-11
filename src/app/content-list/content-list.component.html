@@ -5,38 +5,13 @@
 <!-- <app-content-card testTitle="test"></app-content-card>
 <app-content-card [testTitle]="'test'"></app-content-card>
 <app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
-<input #title type="text" />
-<button (click)="serachItem(title.value)">Serach</button>
-<!-- <p [class.exist]="itemExist" [class.notexist]="!itemExist">{{ message }}</p> -->
-<!-- <p [ngClass]="itemExist ? 'exist' : 'notexist'">{{ message }}</p> -->
-<p *ngIf="itemExist" class="exist">{{ message }}</p>
-<p *ngIf="!itemExist" class="notexist">{{ message }}</p>
+
 <app-content-card
-  *ngFor="
-    let item of getList() | filterItem: 'cake';
-    index as i;
-    first as isFirst
-  "
-  [class.search]="item.searchedItem"
+  *ngFor="let item of getList(); index as i; first as isFirst"
   [class.is-first]="isFirst"
   [item]="item"
 ></app-content-card>
-<app-content-card
-  *ngFor="let item of getList() | filterItem; index as i; first as isFirst"
-  [class.is-first]="isFirst"
-  [item]="item"
-  [class.search]="item.searchedItem"
-></app-content-card>
-<app-content-card
-  *ngFor="
-    let item of getList() | filterItem: 'cookie';
-    index as i;
-    first as isFirst
-  "
-  [class.is-first]="isFirst"
-  [item]="item"
-  [class.search]="item.searchedItem"
-></app-content-card>
+
 <!-- <app-content-card
   [item]="{
     id: 3,
