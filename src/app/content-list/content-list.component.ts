@@ -55,7 +55,7 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://www.sainsburysmagazine.co.uk/uploads/media/1800x1800/07/4577-black-forest-gateau-560.jpg?v=1-0',
-      type: 'cake',
+      type: 'cookie',
       tags: ['cake'],
     },
     {
@@ -65,7 +65,6 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18130334/051114082-01-classic-german-chocolate-cake-recipe-main.jpg',
-      type: 'cake',
       tags: ['cake', 'classic cake'],
     },
     {
@@ -75,7 +74,6 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://bakewithshivesh.com/wp-content/uploads/2021/06/IMG_9642-scaled.jpg',
-      type: 'cake',
       tags: ['cake', 'fruit cake', 'homemade'],
     },
   ];
@@ -91,4 +89,18 @@ export class ContentListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  message:string ="";
+  itemExist:boolean = true;
+  serachItem(title:string) {
+    var index = this.contentItemsArray.findIndex(item =>item.title == title);
+    if(index==-1){
+      this.message = "item dose not exist!";
+      this.itemExist = false;
+    }
+    else{
+      this.message =" item dose exist.";
+      this.itemExist = true;
+      this.contentItemsArray[index].searchedItem = true;
+    }
+  }
 }
