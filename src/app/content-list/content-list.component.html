@@ -7,7 +7,27 @@
 <app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
 
 <app-content-card
-  *ngFor="let item of getList(); index as i; first as isFirst"
+  *ngFor="
+    let item of getList() | filterItem: 'cake';
+    index as i;
+    first as isFirst
+  "
+  [class.is-first]="isFirst"
+  [item]="item"
+></app-content-card>
+
+<app-content-card
+  *ngFor="
+    let item of getList() | filterItem: 'cookie';
+    index as i;
+    first as isFirst
+  "
+  [class.is-first]="isFirst"
+  [item]="item"
+></app-content-card>
+
+<app-content-card
+  *ngFor="let item of getList() | filterItem; index as i; first as isFirst"
   [class.is-first]="isFirst"
   [item]="item"
 ></app-content-card>
