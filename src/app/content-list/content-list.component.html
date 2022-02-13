@@ -1,0 +1,26 @@
+<!-- <p *ngFor="let item of contentItemsArray">{{item.id + ":" + item.description}}</p> -->
+
+<!-- <app-content-card></app-content-card> -->
+
+<!-- <app-content-card testTitle="test"></app-content-card>
+<app-content-card [testTitle]="'test'"></app-content-card>
+<app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
+
+<app-content-card
+  *ngFor="let item of getList(); index as i; first as isFirst"
+  [class.is-first]="isFirst"
+  [item]="item"
+></app-content-card>
+
+<!-- <app-content-card
+  [item]="{
+    id: 3,
+    title: 'Chocolate Cake',
+    description: 'How to make Chocolate Cake',
+    creator: 'nazanin',
+    imgURL:
+      'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
+    type: 'cake',
+    tags: ['cake']
+  }"
+></app-content-card> -->

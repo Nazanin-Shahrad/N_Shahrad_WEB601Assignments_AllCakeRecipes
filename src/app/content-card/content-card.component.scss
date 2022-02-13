@@ -1,0 +1,38 @@
+.card {
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
+.header {
+  border: 1px solid black;
+}
+
+img {
+  width: 100%;
+}
+
+.tags span {
+  padding: 0.5rem;
+  background-color: rgba(255, 166, 0, 0.685);
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+:host.is-first {
+  border: 2px solid black;
+}
+
+.box {
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+header h3 {
+  justify-content: center;
+  padding: 10px;
+}

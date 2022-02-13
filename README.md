@@ -3,6 +3,9 @@ Nazanin Shahrad
 
 I have chosen Cake theme for this content app to store cakes recipes and ingrediants in one place , so I can add more recipes gadually and update and edit the previous one.
 
+I had some issue on how to change the border style : fixed by this line of code  "index as i; first as isFirst"
+  [class.is-first]="isFirst"
+
 
 
 
