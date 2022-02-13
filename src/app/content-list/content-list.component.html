@@ -6,6 +6,13 @@
 <app-content-card [testTitle]="'test'"></app-content-card>
 <app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
 
+
+<input #title type="text" />
+<button (click)="searchItem(title.value)">Serach</button>
+<p *ngIf="isExist" class="exist"> {{message}}</p>
+<p *ngIf="!isExist" class="notexist">{{message}}</p>
+
+
 <app-content-card
   *ngFor="
     let item of getList() | filterItem: 'cake';

@@ -91,4 +91,20 @@ export class ContentListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  message: string = '';
+  isExist: boolean = true;
+
+  searchItem(text: string) {
+    const index = this.contentItemsArray.findIndex(
+      (item) => item.title.toLowerCase() == text.toLowerCase()
+    );
+    if (index == -1) {
+      this.message = ' this title does not exist';
+      this.isExist = false;
+    } else {
+      this.message = ' this title exist';
+      this.isExist = true;
+    }
+  }
 }
