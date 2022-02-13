@@ -14,6 +14,8 @@
   "
   [class.is-first]="isFirst"
   [item]="item"
+  [class.is-cookie]="item.type == 'cookie'"
+  [class.is-cake]="item.type == 'cake'"
 ></app-content-card>
 
 <app-content-card
@@ -24,12 +26,16 @@
   "
   [class.is-first]="isFirst"
   [item]="item"
+  [class.is-cookie]="item.type == 'cookie'"
+  [class.is-cake]="item.type == 'cake'"
 ></app-content-card>
 
 <app-content-card
   *ngFor="let item of getList() | filterItem; index as i; first as isFirst"
   [class.is-first]="isFirst"
   [item]="item"
+  [class.is-cookie]="item.type == 'cookie'"
+  [class.is-cake]="item.type == 'cake'"
 ></app-content-card>
 
 <!-- <app-content-card
