@@ -13,9 +13,9 @@ export class ContentListComponent implements OnInit {
       title: 'Apple Cake',
       description: 'How to make Apple Cake',
       creator: 'nazanin',
-      imgURL:
-        'https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/german_apple_cake_59663_16x9.jpg',
-      type: 'Fruit Cakes',
+      // imgURL:
+      //   'https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/german_apple_cake_59663_16x9.jpg',
+      type: 'cake',
       tags: ['cake', 'friut cake'],
     },
     {
@@ -23,9 +23,9 @@ export class ContentListComponent implements OnInit {
       title: 'Sponge Cake',
       description: 'how to make Sponge Cake',
       creator: 'nazanin',
-      imgURL:
-        'https://cdn.momsdish.com/wp-content/uploads/2020/02/Perfect-Sponge-Cake-12-1200x800.jpg',
-      type: 'Cake',
+      // imgURL:
+      //   'https://cdn.momsdish.com/wp-content/uploads/2020/02/Perfect-Sponge-Cake-12-1200x800.jpg',
+
       tags: ['cake', 'sponge cake'],
     },
     {
@@ -55,7 +55,7 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://www.sainsburysmagazine.co.uk/uploads/media/1800x1800/07/4577-black-forest-gateau-560.jpg?v=1-0',
-      type: 'cake',
+      type: 'cookie',
       tags: ['cake'],
     },
     {
@@ -65,7 +65,7 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18130334/051114082-01-classic-german-chocolate-cake-recipe-main.jpg',
-      type: 'cake',
+      type: 'cookie',
       tags: ['cake', 'classic cake'],
     },
     {
@@ -75,7 +75,7 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://bakewithshivesh.com/wp-content/uploads/2021/06/IMG_9642-scaled.jpg',
-      type: 'cake',
+
       tags: ['cake', 'fruit cake', 'homemade'],
     },
   ];
@@ -91,4 +91,20 @@ export class ContentListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  message: string = '';
+  isExist: boolean = true;
+
+  searchItem(text: string) {
+    const index = this.contentItemsArray.findIndex(
+      (item) => item.title.toLowerCase() == text.toLowerCase()
+    );
+    if (index == -1) {
+      this.message = ' this title does not exist';
+      this.isExist = false;
+    } else {
+      this.message = ' this title exist';
+      this.isExist = true;
+    }
+  }
 }

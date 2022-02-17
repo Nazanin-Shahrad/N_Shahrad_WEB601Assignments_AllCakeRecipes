@@ -4,7 +4,16 @@
   </header>
   <div class="box">
     <!-- <img src="{{item.imgURL}}" /> -->
-    <img (click)="onImageClick()" [src]="item.imgURL" />
+    <div *ngIf="item.imgURL != null; else elseCon">
+      <img (click)="onImageClick()" [src]="item.imgURL" />
+    </div>
+    <ng-template #elseCon>
+      <img
+        (click)="onImageClick()"
+        src="https://iambaker.net/wp-content/uploads/2013/11/chocolate-cake-slice-e1562794545746.jpg"
+      />
+    </ng-template>
+
     <p *ngIf="item.description">{{ item.description }}</p>
     <p *ngIf="item.type">{{ item.type }}</p>
     <p>{{ item.creator }}</p>
