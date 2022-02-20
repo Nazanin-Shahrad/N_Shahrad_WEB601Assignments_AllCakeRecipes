@@ -7,3 +7,5 @@ export interface Content {
     type? : string;
     tags? : string[];
 }
+
+export type HoverAction = 'bold' | 'border';

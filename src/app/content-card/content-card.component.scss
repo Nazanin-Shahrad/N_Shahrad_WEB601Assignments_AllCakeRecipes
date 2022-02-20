@@ -18,12 +18,11 @@ img {
   background-color: rgba(255, 166, 0, 0.685);
   border-radius: 8px;
   margin-right: 1rem;
-  font-weight: bold;
 }
 
-:host.is-first {
-  border: 2px solid black;
-}
+// :host.is-first {
+//   border: 2px solid black;
+// }
 
 .box {
   width: 300px;

@@ -12,7 +12,7 @@ export class ContentCardComponent implements OnInit {
 
   @Input('testTitle') testTitle: string;
   // @Input('x') testTitle: string;
-  @Input() item: Content;
+  @Input() item: Content
 
   ngOnInit(): void {
     console.log('hello');

@@ -15,10 +15,14 @@
     </ng-template>
 
     <p *ngIf="item.description">{{ item.description }}</p>
-    <p *ngIf="item.type" appHoverAffect>{{ item.type }}</p>
+    <p *ngIf="item.type" appHoverAffect action="border">
+      {{ item.type }}
+    </p>
     <p>{{ item.creator }}</p>
     <div class="tags" *ngIf="item.tags">
-      <span *ngFor="let tag of item.tags">{{ tag }}</span>
+      <span appHoverAffect action="bold" *ngFor="let tag of item.tags">{{
+        tag
+      }}</span>
     </div>
   </div>
 </div>
