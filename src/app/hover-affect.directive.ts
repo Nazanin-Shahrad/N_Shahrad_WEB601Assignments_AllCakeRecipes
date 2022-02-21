@@ -50,7 +50,8 @@ export class HoverAffectDirective implements OnInit {
       //     this.elementRef.nativeElement.style.textDecoration = 'underline';
       //     break;
       case 'border':
-        this.elementRef.nativeElement.style.borderBottom = '2px solid black';
+        this.elementRef.nativeElement.style.borderBottom = '1px solid black';
+        console.log('hi border');
         break;
     }
     // //  }
@@ -71,6 +72,7 @@ export class HoverAffectDirective implements OnInit {
       //       break;
       case 'border':
         this.elementRef.nativeElement.style.borderBottom = 'none';
+        console.log('bye border');
         break;
     }
     //   // }
