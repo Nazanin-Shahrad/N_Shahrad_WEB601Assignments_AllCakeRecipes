@@ -1,4 +1,3 @@
-import { leadingComment } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
@@ -8,17 +7,15 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss'],
 })
 export class ContentCardComponent implements OnInit {
+  @Input() item!: Content;
+
+  onClickImage() {
+    console.log(
+      `item-id is ${this.item.id} and Item-Title is ${this.item.title} `
+    );
+  }
+
   constructor() {}
 
-  @Input('testTitle') testTitle: string;
-  // @Input('x') testTitle: string;
-  @Input() item: Content;
-
-  ngOnInit(): void {
-    console.log('hello');
-  }
-
-  onImageClick() {
-    console.log(this.item.id, this.item.title);
-  }
+  ngOnInit(): void {}
 }

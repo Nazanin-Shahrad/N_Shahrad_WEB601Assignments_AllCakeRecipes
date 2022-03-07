@@ -1,15 +1,29 @@
 <div class="card">
-  <header class="header">
-    <h3>{{ item.title }}</h3>
+  <header>
+    <h1>{{ item.title }}</h1>
   </header>
+
   <div class="box">
-    <!-- <img src="{{item.imgURL}}" /> -->
-    <img (click)="onImageClick()" [src]="item.imgURL" />
-    <p *ngIf="item.description">{{ item.description }}</p>
-    <p *ngIf="item.type">{{ item.type }}</p>
-    <p>{{ item.creator }}</p>
-    <div class="tags" *ngIf="item.tags">
-      <span *ngFor="let tag of item.tags">{{ tag }}</span>
+    <h3>{{ item.creator }}</h3>
+    <p>{{ item.description }}</p>
+    <div *ngIf="item.imgURL != null; else elsecon">
+      <img (click)="onClickImage()" [src]="item.imgURL" />
+    </div>
+
+    <ng-template #elsecon>
+      <img
+        (click)="onClickImage()"
+        src="https://www.gardeningknowhow.com/wp-content/uploads/2021/07/sulfur-cosmos-mexican-aster-flowers.jpg"
+      />
+    </ng-template>
+
+    <p appHoverAffect action="border" *ngIf="item.type">
+      {{ item.type }}
+    </p>
+    <div>
+      <span appHoverAffect action="bold" *ngFor="let tag of item.tags">{{
+        tag
+      }}</span>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-content-list',
@@ -7,7 +7,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss'],
 })
 export class ContentListComponent implements OnInit {
-  contentItemsArray: Content[] = [
+  allItemsArray: Content[] = [
     {
       id: 1,
       title: 'Apple Cake',
@@ -15,7 +15,8 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/german_apple_cake_59663_16x9.jpg',
-      type: 'Fruit Cakes',
+      type: 'cookie',
+
       tags: ['cake', 'friut cake'],
     },
     {
@@ -25,7 +26,7 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://cdn.momsdish.com/wp-content/uploads/2020/02/Perfect-Sponge-Cake-12-1200x800.jpg',
-      type: 'Cake',
+
       tags: ['cake', 'sponge cake'],
     },
     {
@@ -45,7 +46,8 @@ export class ContentListComponent implements OnInit {
       creator: 'nazanin',
       imgURL:
         'https://www.cookingclassy.com/wp-content/uploads/2020/04/carrot-cake-20-1.jpg',
-      type: 'cake',
+      type: 'cookie',
+
       tags: ['cake'],
     },
     {
@@ -78,17 +80,43 @@ export class ContentListComponent implements OnInit {
       type: 'cake',
       tags: ['cake', 'fruit cake', 'homemade'],
     },
+    {
+      id: 8,
+      title: 'cherry Cake',
+      description: 'How to make cherry Cake',
+      creator: 'nazanin',
+      imgURL:
+        'https://www.alsothecrumbsplease.com/wp-content/uploads/2019/07/Cherry-Cake-13.jpg',
+      type: 'cake',
+      tags: ['cake', 'fruit cake', 'homemade'],
+    },
   ];
-
-  // lengthContent(): number {
-  //   return this.contentItemsArray.length;
-  // }
-
-  getList() {
-    return this.contentItemsArray.slice(0, 6);
-  }
 
   constructor() {}
 
   ngOnInit(): void {}
+  message: string = '';
+  isexist: boolean = true;
+
+  search(title: string) {
+    let index = this.allItemsArray.findIndex(
+      (item) => item.title.toLowerCase() == title.toLowerCase()
+    );
+    console.log(index);
+
+    if (index == -1) {
+      this.message = `this title : ${title} does not exist.`;
+      this.isexist = false;
+    } else {
+      this.message = `this title : ${title} exists.`;
+      this.isexist = true;
+    }
+  }
+
+  addContentToList(newContentFromChild: Content) {
+    this.allItemsArray.push(newContentFromChild);
+    this.allItemsArray = [...this.allItemsArray];
+
+    console.log('new contenet added successfully');
+  }
 }

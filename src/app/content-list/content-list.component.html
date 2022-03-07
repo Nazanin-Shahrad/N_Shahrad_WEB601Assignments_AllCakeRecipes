@@ -1,26 +1,56 @@
-<!-- <p *ngFor="let item of contentItemsArray">{{item.id + ":" + item.description}}</p> -->
+<app-create-content
+  (newContentEvent)="addContentToList($event)"
+></app-create-content>
 
-<!-- <app-content-card></app-content-card> -->
-
-<!-- <app-content-card testTitle="test"></app-content-card>
-<app-content-card [testTitle]="'test'"></app-content-card>
-<app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
+Insert your title:<input type="text" #inputtext />
+<button (click)="search(inputtext.value)">Search</button>
+<p *ngIf="isexist" class="isexist">{{ message }}</p>
+<p *ngIf="!isexist" class="notexist">{{ message }}</p>
 
 <app-content-card
-  *ngFor="let item of getList(); index as i; first as isFirst"
+  *ngFor="
+    let item of allItemsArray | filterItem;
+    index as i;
+    first as isFirst;
+    last as isLast
+  "
+  [class.found]="item.title == inputtext.value"
   [class.is-first]="isFirst"
+  [class.is-last]="isLast"
+  [class.is-cake]="item.type == 'cake'"
+  [class.is-cookie]="item.type == 'cookie'"
   [item]="item"
-></app-content-card>
+>
+</app-content-card>
 
-<!-- <app-content-card
-  [item]="{
-    id: 3,
-    title: 'Chocolate Cake',
-    description: 'How to make Chocolate Cake',
-    creator: 'nazanin',
-    imgURL:
-      'https://preppykitchen.com/wp-content/uploads/2019/06/Ultimate-Chocolate-Cake-feature-1200.jpg',
-    type: 'cake',
-    tags: ['cake']
-  }"
-></app-content-card> -->
+<app-content-card
+  *ngFor="
+    let item of allItemsArray | filterItem: 'cake';
+    index as i;
+    first as isFirst;
+    last as isLast
+  "
+  [class.found]="item.title == inputtext.value"
+  [class.is-first]="isFirst"
+  [class.is-last]="isLast"
+  [item]="item"
+  [class.is-cake]="item.type == 'cake'"
+  [class.is-cookie]="item.type == 'cookie'"
+>
+</app-content-card>
+
+<app-content-card
+  *ngFor="
+    let item of allItemsArray | filterItem: 'cookie';
+    index as i;
+    first as isFirst;
+    last as isLast
+  "
+  [class.found]="item.title == inputtext.value"
+  [class.is-first]="isFirst"
+  [class.is-last]="isLast"
+  [item]="item"
+  [class.is-cake]="item.type == 'cake'"
+  [class.is-cookie]="item.type == 'cookie'"
+>
+</app-content-card>
