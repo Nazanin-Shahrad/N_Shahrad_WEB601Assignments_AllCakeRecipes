@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'N_Shahrad_AllCakeRecipes';
+<<<<<<< Updated upstream
+=======
+  promise: Promise<any>;
+
+  ngOnInit(){
+
+  }
+
+
+>>>>>>> Stashed changes
 }
