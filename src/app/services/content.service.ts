@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { delay, map, of } from 'rxjs';
-import { contents } from '../helper-files/contentDB';
+import { allItemsArray } from '../helper-files/contentDB';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,12 @@ export class ContentService {
   x: number;
 
   getContents() {
-    return of(contents).pipe(
-      delay(5000),
-      map((x) => x.map((item) => item.title))
-    );
+    return of(allItemsArray);
+    // return of(allItemsArray).pipe(
+    //   delay(5000),
+    //   map((x) => x.map((item) => item.title))
+    // );
+    /////////////////////////////
     // .pipe(
     //   delay(5000),
     //   map((x) => {
@@ -25,7 +27,7 @@ export class ContentService {
   }
 
   getContentById(id: number) {
-    const content = contents.find((c) => c.id == id);
+    const content = allItemsArray.find((c) => c.id == id);
     return of(content);
   }
 }

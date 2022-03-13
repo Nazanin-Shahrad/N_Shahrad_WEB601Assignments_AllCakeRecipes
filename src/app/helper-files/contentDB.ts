@@ -1,6 +1,6 @@
 import { Content } from './content-interface';
 
-export const contents: Content[] = [
+export const allItemsArray: Content[] = [
   {
     id: 1,
     title: 'Apple Cake',

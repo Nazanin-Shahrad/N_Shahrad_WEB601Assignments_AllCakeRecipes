@@ -13,6 +13,7 @@ export class ContentCardComponent implements OnInit {
   @Input('testTitle') testTitle: string;
   // @Input('x') testTitle: string;
   @Input() item: Content;
+  @Input() enableShadow: boolean;
 
   ngOnInit(): void {
     console.log('hello');
