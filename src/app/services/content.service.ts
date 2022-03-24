@@ -1,16 +1,24 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, map, of } from 'rxjs';
+import { Content } from '../helper-files/content-interface';
 import { allItemsArray } from '../helper-files/contentDB';
+
+// https://test.com/api => baseApi
+
+// GET - {{baseAPi}}/customers
+// POST - {{baseAPi}}/customers - {key:value}
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
   x: number;
 
   getContents() {
-    return of(allItemsArray);
+    return this.http.get<Content[]>('api/content');
+
     // return of(allItemsArray).pipe(
     //   delay(5000),
     //   map((x) => x.map((item) => item.title))
@@ -24,6 +32,10 @@ export class ContentService {
     //     });
     //   })
     // );
+  }
+
+  createContent(content: Content) {
+    return this.http.post<Content>('api/content', content);
   }
 
   getContentById(id: number) {
