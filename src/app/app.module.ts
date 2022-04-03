@@ -10,6 +10,13 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { MessageComponent } from './message/message.component';
 import { DataService } from './services/data.service';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { ContentModifyFormComponent } from './content-modify-form/content-modify-form.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -18,14 +25,21 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     ContentListComponent,
     MessageComponent,
     ModifyContentComponent,
+    ContentModifyFormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatDialogModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [MatDialog],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

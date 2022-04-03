@@ -1,9 +1,9 @@
-<div class="card" [class.shadow]="enableShadow">
+<!-- <div class="card" [class.shadow]="enableShadow">
   <header class="header">
     <h3>{{ item.title }}</h3>
   </header>
   <div class="box">
-    <!-- <img src="{{item.imgURL}}" /> -->
+     <img src="{{item.imgURL}}" />
     <img (click)="onImageClick()" [src]="item.imgURL" />
     <p *ngIf="item.description">{{ item.description }}</p>
     <p *ngIf="item.type">{{ item.type }}</p>
@@ -12,4 +12,21 @@
       <span *ngFor="let tag of item.tags">{{ tag }}</span>
     </div>
   </div>
-</div>
+</div> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ item.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="item.imgURL" />
+  <mat-card-content>
+    <p>
+      {{ item.description }}
+    </p>
+    <p *ngIf="item.type">{{ item.type }}</p>
+    <p>{{ item.creator }}</p>
+    <div class="tags" *ngIf="item.tags">
+      <span *ngFor="let tag of item.tags">{{ tag }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>
