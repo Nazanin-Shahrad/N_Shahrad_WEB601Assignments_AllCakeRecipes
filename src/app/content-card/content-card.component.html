@@ -20,13 +20,14 @@
   </mat-card-header>
   <img mat-card-image [src]="item.imgURL" />
   <mat-card-content>
-    <p>
+    <!-- <p>
       {{ item.description }}
-    </p>
+    </p> -->
     <p *ngIf="item.type">{{ item.type }}</p>
     <p>{{ item.creator }}</p>
     <div class="tags" *ngIf="item.tags">
       <span *ngFor="let tag of item.tags">{{ tag }}</span>
     </div>
+    <a [routerLink]="['/details',item.id]">More</a>
   </mat-card-content>
 </mat-card>

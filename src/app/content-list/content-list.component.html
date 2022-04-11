@@ -11,8 +11,7 @@
 <app-content-card [testTitle]="'test'" [item]=""></app-content-card> -->
 
 <app-content-card
-  *ngFor="let item of allItemsArray; index as i; first as isFirst"
-  [class.is-first]="isFirst"
+  *ngFor="let item of allItemsArray"
   [item]="item"
 ></app-content-card>
 

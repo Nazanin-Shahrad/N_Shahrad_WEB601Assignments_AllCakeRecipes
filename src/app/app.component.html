@@ -8,5 +8,5 @@
 ></app-content-card>
 <hr />
 <app-content-card [enableShadow]="true" [item]="content"></app-content-card> -->
-<app-modify-content (contentModified)="onContentModified($event)"></app-modify-content>
-<app-content-list [newContent]="content"></app-content-list>
+<!-- <app-modify-content (contentModified)="onContentModified($event)"></app-modify-content> -->
+<router-outlet></router-outlet>

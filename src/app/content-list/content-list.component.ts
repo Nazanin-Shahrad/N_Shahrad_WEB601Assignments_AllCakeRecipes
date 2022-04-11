@@ -17,12 +17,11 @@ import { MessageService } from '../services/message.service';
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss'],
 })
-export class ContentListComponent implements OnInit, OnChanges {
+export class ContentListComponent implements OnInit {
   allItemsArray: Content[];
   message: string = '';
   isexist: boolean = true;
   // @Input() ItemArray: Content;
-  @Input() newContent: Content;
 
   constructor(
     private contentService: ContentService,
@@ -45,12 +44,6 @@ export class ContentListComponent implements OnInit, OnChanges {
     // this.contentService.getContentById(5).subscribe((itemArray) => {
     //   return itemArray;
     // });
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.newContent) {
-      this.allItemsArray.push(this.newContent);
-    }
   }
 
   search(title: string) {
