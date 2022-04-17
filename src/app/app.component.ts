@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Content } from '../app/helper-files/content-interface';
 
 import { ContentService } from '../app/services/content.service';
+import { LogUpdateService } from './services/log-update.service';
 import { MessageService } from './services/message.service';
 
 @Component({
@@ -17,10 +18,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private contentService: ContentService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private logUpdateService: LogUpdateService
   ) {}
 
   ngOnInit(): void {
+    this.logUpdateService.init();
     // this.contentService.getContentById(5).subscribe((item) => {
     //   this.content = item;
     //   this.messageService.add(`content with id ${this.content.id} is loaded!`);
